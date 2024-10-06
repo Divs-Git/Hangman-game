@@ -1,15 +1,23 @@
 import { useState } from "react";
 import TextInputForm from "./TextInputForm";
+import { useNavigate } from "react-router-dom";
 
 function TextInputFormHandler() {
   const [inputType, setInputType] = useState("password");
+  const [value, setValue] = useState("");
+
+  const navigate = useNavigate();
 
   function handlerFormSubmit(e) {
     e.preventDefault();
-    console.log("Form is submitted succesfully");
+    setTimeout(() => {
+      if (value) {
+        navigate("/play");
+      }
+    }, 5000);
   }
   function handlerInputChange(e) {
-    console.log(e.target.value);
+    setValue(e.target.value);
   }
 
   function handleShowHideClick() {
@@ -18,7 +26,6 @@ function TextInputFormHandler() {
     } else {
       setInputType("password");
     }
-    console.log("I have been called");
   }
   return (
     <TextInputForm
