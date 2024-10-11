@@ -6,7 +6,7 @@ import PlayGame from "./pages/PlayGame";
 function App() {
   return (
     <Routes>
-      <Route path="/start" element={<StartGame />} />
+      <Route path="/" element={<StartGame />} />
       <Route path="/playgame" element={<PlayGame />} />
     </Routes>
   );
