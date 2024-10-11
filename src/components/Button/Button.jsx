@@ -1,6 +1,11 @@
-import getButtonStyleType from "./getButtonStyleType";
+import getButtonStyleType from './getButtonStyleType';
 
-function Button({ buttonStyleType, label, type = "button", onClickHandler }) {
+function Button({
+  buttonStyleType = 'primary',
+  label,
+  type = 'button',
+  onClickHandler,
+}) {
   return (
     <button
       className={`text-white ${getButtonStyleType(

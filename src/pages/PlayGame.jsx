@@ -1,8 +1,9 @@
-import { useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import MaskedText from '../components/MaskedText/MaskedText';
 import LetterButtons from '../components/LetterButtons/LetterButtons';
 import { useState } from 'react';
 import Hangman from '../components/Hangman/Hangman';
+import Button from '../components/Button/Button';
 
 function PlayGame() {
   const { state } = useLocation();
@@ -35,6 +36,11 @@ function PlayGame() {
       </div>
       <div>
         <Hangman step={step} />
+      </div>
+      <div>
+        <Link to="/">
+          <Button label={'Back to home'} />
+        </Link>
       </div>
     </div>
   );
